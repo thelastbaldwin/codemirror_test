@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>codemirror test</title>
 	<link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<script src="node_modules/codemirror/lib/codemirror.js"></script>
 	<script src="node_modules/codemirror/mode/css/css.js"></script>
 	<script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
@@ -13,7 +14,31 @@
 <body>
 	<article>
 		<h2>HTML5 preview</h2>
-
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active">
+        <a href="#html-content" data-toggle="tab">HTML</a></li>
+      <li role="presentation">
+        <a href="#css-content" data-toggle="tab">CSS</a></li>
+      <li role="presentation">
+        <a href="#js-content" data-toggle="tab">JS</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="html-content">
+        <textarea class="form-control" name="html-code" id="html-code"><h1>HERE</h1></textarea>
+      </div>
+      <div class="tab-pane" id="css-content">
+        <textarea class="form-control" name="css-code" id="css-code">
+body{
+  background-color: red;
+}
+        </textarea>
+      </div>
+      <div class="tab-pane" id="js-content">
+        <textarea class="form-control" name="js-code" id="js-code">
+console.log('here');
+        </textarea>
+      </div>
+    </div>
 		<textarea id=code name=code>
 			<!doctype html>
 			<html>
@@ -40,25 +65,8 @@
 		</textarea>
 		<iframe id=preview></iframe>
 	</article>
-	<script>
-			var delay;
-      // Initialize CodeMirror editor with a nice html5 canvas demo.
-      var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-      	mode: 'text/html'
-      });
-      editor.on("change", function() {
-      	clearTimeout(delay);
-      	delay = setTimeout(updatePreview, 300);
-      });
-      
-      function updatePreview() {
-      	var previewFrame = document.getElementById('preview');
-      	var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
-      	preview.open();
-      	preview.write(editor.getValue());
-      	preview.close();
-      }
-      setTimeout(updatePreview, 300);
-  </script>
+	<script src="js/main.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
