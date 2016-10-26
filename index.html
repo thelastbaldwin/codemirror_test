@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>codemirror test</title>
 	<link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<script src="node_modules/codemirror/lib/codemirror.js"></script>
 	<script src="node_modules/codemirror/mode/css/css.js"></script>
 	<script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
@@ -14,59 +14,35 @@
 <body>
 	<article>
 		<h2>HTML5 preview</h2>
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active">
-        <a href="#html-content" data-toggle="tab">HTML</a></li>
-      <li role="presentation">
-        <a href="#css-content" data-toggle="tab">CSS</a></li>
-      <li role="presentation">
-        <a href="#js-content" data-toggle="tab">JS</a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="html-content">
-        <textarea class="form-control" name="html-code" id="html-code"><h1>HERE</h1></textarea>
-      </div>
-      <div class="tab-pane" id="css-content">
-        <textarea class="form-control" name="css-code" id="css-code">
-body{
-  background-color: red;
-}
-        </textarea>
-      </div>
-      <div class="tab-pane" id="js-content">
-        <textarea class="form-control" name="js-code" id="js-code">
-console.log('here');
-        </textarea>
-      </div>
-    </div>
-		<textarea id=code name=code>
-			<!doctype html>
-			<html>
-			<head>
-				<meta charset=utf-8>
-				<title>HTML5 canvas demo</title>
-				<style>p {font-family: monospace;}</style>
-			</head>
-			<body>
-				<p>Canvas pane goes here:</p>
-				<canvas id=pane width=300 height=200></canvas>
-				<script>
-					var canvas = document.getElementById('pane');
-					var context = canvas.getContext('2d');
-
-					context.fillStyle = 'rgb(250,0,0)';
-					context.fillRect(10, 10, 55, 50);
-
-					context.fillStyle = 'rgba(0, 0, 250, 0.5)';
-					context.fillRect(30, 30, 55, 50);
-				</script>
-			</body>
-			</html>
-		</textarea>
-		<iframe id=preview></iframe>
-	</article>
-	<script src="js/main.js"></script>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+		<ul class="nav nav-pills">
+			<li role="presentation" class="active">
+				<a href="#html-content" data-toggle="tab">HTML</a></li>
+				<li role="presentation">
+					<a href="#css-content" data-toggle="tab">CSS</a></li>
+					<li role="presentation">
+						<a href="#js-content" data-toggle="tab">JS</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="html-content">
+							<textarea class="form-control" name="html-code" id="html-code"><h1>HERE</h1></textarea>
+						</div>
+						<div class="tab-pane" id="css-content">
+							<textarea class="form-control" name="css-code" id="css-code">
+								body{
+								background-color: red;
+							}
+						</textarea>
+					</div>
+					<div class="tab-pane" id="js-content">
+						<textarea class="form-control" name="js-code" id="js-code">
+							console.log('here');
+						</textarea>
+					</div>
+				</div>
+				<iframe id=preview></iframe>
+			</article>
+			<script src="node_modules/jquery/dist/jquery.min.js"></script>
+			<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+			<script src="js/main.js"></script>
+		</body>
+		</html>
